@@ -1,66 +1,38 @@
-# react-provide-props
+# react-high-order-component
 
-Create react higher-order components (providers) simply. For what is this?
-You can simply provide for example react-router to your components as high-order component.
-That means you can avoid using context. Your new provider will update props of the component.
+Create react higher-order components (providers) simply.
 
 # Example
 
-## Create provider
+## Create your High-Order component
 
 ```js
-import { PropTypes } from 'react';
-import createProvider from 'react-provide-props';
+import React, { PropTypes, Component, createElement } from 'react';
+import highOrderProvider from 'react-high-order-provider';
 
-const provider = createProvider('PlaceholderProvider', (props, context) => ({
-  placeholder: `What is your favorite color ${props.name}?`,
-}), {
-  placeholder: PropTypes.string,
-});
+@highOrderProvider
+export default class Example extends Component {
+  render() {
+    const { props, component } = this.props;
 
-export default provider;
+    return createElement(component, {
+      ...props,
+      myAditionalProp: 123,
+    });
+  }
+}
 ```
 
 ## Extend your component
 
 ```js
 import React, { Component } from 'react';
-import placeholderProvider from './placeholderProvider';
+import exampleProvider from './Example';
 
+@exampleProvider
 function MyComponent(props) {
   return (
-    <input type="text" placeholder={props.placeholder} />
-  );
-}
-
-export default placeholderProvider(MyComponent);
-```
-
-## Extend your component with ES7 decorator
-
-```js
-import React, { Component } from 'react';
-import placeholderProvider from './placeholderProvider';
-
-@placeholderProvider
-export default class MyComponent extends Component {
-  render () {
-    return (
-      <input type="text" placeholder={this.props.placeholder} />
-    );
-  }
-}
-```
-
-## Use your component
-
-```js
-import React, { Component } from 'react';
-import MyComponent from './MyComponent';
-
-function MyComponent(props) {
-  return (
-    <MyComponent name="Zlatko" />
+    <input type="text" placeholder={props.myAditionalProp} />
   );
 }
 ```
@@ -68,5 +40,5 @@ function MyComponent(props) {
 ## The result will be
 
 ```html
-<input type="text" placeholder="What is your favorite color Zlatko" />
+<input type="text" placeholder="123" />
 ```
