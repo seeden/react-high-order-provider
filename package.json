@@ -1,0 +1,71 @@
+{
+  "name": "react-high-order-provider",
+  "version": "1.0.0",
+  "description": "Create your react high-order component easily ",
+  "main": "dist/index.js",
+  "keywords": [
+    "react",
+    "provider",
+    "component",
+    "props",
+    "provide",
+    "high-order",
+    "react-component"
+  ],
+  "files": [
+    "dist/",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "prepublish": "npm run build",
+    "test": "babel-node ./node_modules/gulp/bin/gulp.js test",
+    "build": "babel-node ./node_modules/gulp/bin/gulp.js build",
+    "coveralls": "babel-node ./node_modules/gulp/bin/gulp.js coveralls",
+    "eslint": "node ./node_modules/eslint/bin/eslint.js --ext .js,.jsx ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CherryProjects/react-translate-maker.git"
+  },
+  "author": "Zlatko Fedor <zlatkofedor@cherrysro.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/CherryProjects/react-translate-maker/issues"
+  },
+  "homepage": "https://github.com/CherryProjects/react-translate-maker",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.10.4",
+    "babel-eslint": "^6.1.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-class-properties": "^6.10.2",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-preset-stage-1": "^6.5.0",
+    "eslint": "^2.13.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-loader": "^1.3.0",
+    "eslint-plugin-react": "^5.2.2",
+    "eslint-plugin-jsx-a11y": "^1.5.3",
+    "eslint-plugin-import": "^1.9.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-coveralls": "^0.1.4",
+    "gulp-jsx-coverage": "^0.3.8",
+    "gulp-util": "^3.0.7",
+    "react": "^15.1.0",
+    "react-addons-test-utils": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "should": "^9.0.2",
+    "mocha": "^2.5.3",
+    "jsdom": "^3.1.2 || ^6.5.1"
+  },
+  "peerDependencies": {
+    "react": "15.x"
+  }
+}
