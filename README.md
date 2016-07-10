@@ -13,10 +13,10 @@ import highOrderProvider from 'react-high-order-provider';
 @highOrderProvider
 export default class Example extends Component {
   render() {
-    const { props, component } = this.props;
+    const { originalProps, component } = this.props;
 
     return createElement(component, {
-      ...props,
+      ...originalProps,
       myAditionalProp: 123,
     });
   }

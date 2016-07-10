@@ -4,7 +4,7 @@ import hoistNonReactStatics from 'hoist-non-react-statics';
 function createProvider(HighOrderComponent, ...args) {
   return (Component) => {
     function StateLessComponent(props) {
-      return <HighOrderComponent props={props} component={Component} args={args} />;
+      return <HighOrderComponent originalProps={props} component={Component} args={args} />;
     }
 
     hoistNonReactStatics(StateLessComponent, Component);
