@@ -1,6 +1,6 @@
 {
   "name": "react-high-order-provider",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Create your react high-order component easily ",
   "main": "dist/index.js",
   "keywords": [
